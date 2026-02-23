@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namma Unavu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --font-header: 'Plus Jakarta Sans', sans-serif;
+        --font-body: 'Inter', sans-serif;
+      }
+      body {
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6, .font-heading {
+        font-family: var(--font-header);
+      }
+      /* Hide scrollbar */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Welcome Animation Keyframes */
+      @keyframes cinematic-reveal {
+        0% { filter: blur(10px); opacity: 0; transform: scale(0.95); }
+        100% { filter: blur(0); opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes tracking-in {
+        0% { letter-spacing: -0.5em; opacity: 0; }
+        40% { opacity: 0.6; }
+        100% { letter-spacing: 0.1em; opacity: 1; }
+      }
+
+      @keyframes slide-up-fade {
+        0% { transform: translateY(20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+
+      @keyframes curtain-exit {
+        0% { opacity: 1; }
+        100% { opacity: 0; visibility: hidden; }
+      }
+
+      .animate-reveal { animation: cinematic-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+      .animate-tracking { animation: tracking-in 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+      .animate-slide-up { animation: slide-up-fade 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards; opacity: 0; }
+      .welcome-exit { animation: curtain-exit 0.8s cubic-bezier(0.7, 0, 0.84, 0) forwards; }
+
+      @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.08); }
+        100% { transform: scale(1); }
+      }
+      .animate-pop {
+        animation: pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#fafafa] text-slate-900 antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
